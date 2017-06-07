@@ -19,7 +19,7 @@
 
         vm.callHref = function (ref) {
             $window.open(ref, '_blank');
-        }
+        };
 
 
 

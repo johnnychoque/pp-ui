@@ -55,5 +55,9 @@
 </table>
 <br>
 <br>
-<md-button style="float:right" class="md-flat md-primary" ng-click="vm.update()"> Update </md-button>
+<md-button style="float:right" class="md-flat md-primary" ng-disabled="!vm.updateEnabled" ng-click="vm.update()"> Update </md-button>
 </div>
+
+<!--
+<md-button style="float:right" class="md-flat md-primary" ng-disabled="!vm.states.isEmpty()" ng-click="vm.update()"> Update </md-button>
+-->

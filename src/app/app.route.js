@@ -55,8 +55,6 @@
             },
         })
 
-      
-
        /*
         -- Callback --
         It saves token from accounts organicity
@@ -69,7 +67,7 @@
                     auth.callback();
                 }
             }
-        })
+        });
 
         /* Default state */
         $urlRouterProvider.otherwise('/welcome');
@@ -79,8 +77,8 @@
             requireBase: false
         }).hashPrefix('!');
 
-		RestangularProvider.setBaseUrl('http://ec2-35-167-187-240.us-west-2.compute.amazonaws.com:8051');
-        //RestangularProvider.setBaseUrl('http://localhost:8081');
+		//RestangularProvider.setBaseUrl('http://ec2-35-167-187-240.us-west-2.compute.amazonaws.com:8051');
+        RestangularProvider.setBaseUrl('http://localhost:8081');
         //RestangularProvider.setBaseUrl('https://localhost:8443');
         //RestangularProvider.setBaseUrl('https://experimenters.organicity.eu:8443');
 

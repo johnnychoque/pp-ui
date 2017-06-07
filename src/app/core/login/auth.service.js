@@ -101,9 +101,9 @@
 
 
         function login() {
-            //window.location.href = "https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth/?response_type=token&client_id=experimenter-portal-dev&redirect_uri=http://localhost:8080/&scope=&state=";
+            window.location.href = "https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth/?response_type=token&client_id=experimenter-portal-dev&redirect_uri=http://localhost:8082/&scope=&state=";
             //window.location.href = "https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth/?response_type=token&client_id=participants-portal&redirect_uri=https://participants.organicity.eu//&scope=&state=";
-			window.location.href = "https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth/?response_type=token&client_id=participant-portal-dev&redirect_uri=http://ec2-35-167-187-240.us-west-2.compute.amazonaws.com:8060/&scope=&state=";
+			//window.location.href = "https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth/?response_type=token&client_id=participant-portal-dev&redirect_uri=http://ec2-35-167-187-240.us-west-2.compute.amazonaws.com:8060/&scope=&state=";
         }
 
         function callback(ret) {

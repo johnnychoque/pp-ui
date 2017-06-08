@@ -20,10 +20,10 @@
 
         vm.participantId = auth.getCurrentUserId();
         vm.username = auth.getCurrentUserName();
-        /*
+        
         for (var i = 0; i < vm.invs.length; i++) {
             vm.states[vm.invs[i].experimentId] = vm.invs[i].state;
-        }*/
+        }
 
         console.log(JSON.stringify(vm.invs));
 
@@ -95,10 +95,10 @@
             var obj = {};
             console.log('STATES ', vm.states);
             for (var i = 0; i < auxInvs.length; i++) {
-                if (vm.states[auxInvs[i].experimentId] === undefined) {
+                /*if (vm.states[auxInvs[i].experimentId] === undefined) {
                     auxInvs[i].state = 'pending';
                 }
-                else {
+                else {*/
                     auxInvs[i].state = vm.states[auxInvs[i].experimentId];
                     if (auxInvs[i].state == 'accepted') {
                         obj = new Object();
@@ -107,7 +107,7 @@
                         obj.username = vm.username;
                         parts.push(obj);
                     }
-                }
+                //}
             }
             console.log('PARTS-> ',parts);
             console.log('AUXinvs-> ', auxInvs);
@@ -139,8 +139,8 @@
             );
             
             vm.updateEnabled = false;
-            vm.states = {};
-            vm.invs = EpCommunity.getInvitations();
+            //vm.states = {};
+            //vm.invs = EpCommunity.getInvitations();
         };
     }
     

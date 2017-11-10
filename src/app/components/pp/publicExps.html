@@ -1,0 +1,35 @@
+<md-progress-circular ng-show="vm.loadingChart" class="md-hue-3 chart_spinner" md-mode="indeterminate"></md-progress-circular>
+<label style="margin: auto;color: #EF4070; font-size: 200%"> Participant Portal</label>
+<br>
+<nav class="navTags">
+    <a href='#' ng-click="vm.goHome()" style="color:#EF4070; transform: translateY(6px);" class="material-icons" >home</a>
+</nav>
+<hr/>
+
+<h3> List of Public Experiments </h3>
+<br>
+<div>
+    <md-progress-circular ng-show="vm.loadingChart" class="md-hue-3 chart_spinner" md-mode="indeterminate"></md-progress-circular>
+</div>
+<table datatable="ng" dt-options="vm.dtOptions" dt-column-defs="vm.dtColumnDefs" class="hover">
+	<thead>
+		<tr>
+		<th>Experiment Name</th>
+		<th>Experiment Description</th>
+		<th>Selected</th>
+		<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="exp in vm.pubExps" >
+			<td align="left" width="20%" >{{ exp.name.toUpperCase() }}</td>
+			<td class="left" width="40%" >{{ vm.shortDescription(exp.description)}}</td>
+			<td width="5%"> {{exp.selected}} </td>
+			<td width="5%"> <md-switch ng-model="exp.selected" ng-click="vm.selClick()" aria-label="Switch 2" ng-true-value="true" ng-false-value="false"> </md-switch> </td>
+		</tr>
+	</tbody>
+</table>
+<br>
+<br>
+<md-button style="float:right" class="md-flat md-primary" ng-disabled="!vm.somethingChanged" ng-click="vm.sendExps()"> Enrol in experiments ></md-button>
+<md-button style="float:left" class="md-flat md-primary"  ng-click="vm.goBack()"> < Go back </md-button>

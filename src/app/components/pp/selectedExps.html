@@ -1,0 +1,36 @@
+<md-progress-circular ng-show="vm.loadingChart" class="md-hue-3 chart_spinner" md-mode="indeterminate"></md-progress-circular>
+<label style="margin: auto;color: #EF4070; font-size: 200%"> Participant Portal</label>
+<br>
+<nav class="navTags">
+    <a href='#' ng-click="vm.goHome()" style="color:#EF4070; transform: translateY(6px);" class="material-icons" >home</a>
+</nav>
+<hr/>
+
+<h3> List of Selected Experiments </h3>
+<br>
+<div>
+    <md-progress-circular ng-show="vm.loadingChart" class="md-hue-3 chart_spinner" md-mode="indeterminate"></md-progress-circular>
+</div>
+<table datatable="ng" dt-options="vm.dtOptions" dt-column-defs="vm.dtColumnDefs" class="hover">
+    <thead>
+        <tr>
+            <th>Experiment Name</th>
+            <th>Experiment Description</th>
+			<th></th>
+            <th>Subscribed Date</th>
+            <th>Subscribed From</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="exp in vm.exps">
+            <td align="left" width="20%">{{ exp.experimentName.toUpperCase() }}</td>
+            <td class="left" width="40%">{{ vm.shortDescription(exp.description)}}</td>
+			<td align="selectCell" ng-click="vm.expInfo($event,exp)"><i class="material-icons" style="color:blue;cursor:pointer;">info</i></td>
+			<td class="center" width="20%">{{ vm.getDate(exp.subscribedDate)}}</td>
+            <td align="center" width="20%" class="exp_status">{{exp.subscribedFrom.toUpperCase()}}</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<md-button style="float:left" class="md-flat md-primary"  ng-click="vm.goBack()"> < Go back </md-button>

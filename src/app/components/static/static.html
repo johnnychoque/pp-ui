@@ -1,0 +1,9 @@
+<div class="jsonView">
+            <json child="vm.jsonData" default-collapsed="false" type="object"></json>
+        </div>
+
+        <hr>
+        <div>
+            <textarea id="jsonTextarea" ng-model="vm.jsonString"></textarea>
+            <span class="red" ng-if="!vm.wellFormed">JSON not well-formed!</span>
+        </div>

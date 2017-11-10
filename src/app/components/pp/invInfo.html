@@ -1,0 +1,24 @@
+<md-dialog aria-label="Invitation Info" layout-padding>
+    <md-dialog-content style="height: 40vh; width: 30vw;">
+        <h3>Invitation Info</h3>
+		<table>
+			<tr>
+			<td class="ep_pLabel">Experiment Name: </td>
+			<td class="ep_bLabel"> {{vm.invitation.experimentName}} </td>
+			</tr>
+			<tr>
+			<td class="ep_pLabel">Experiment Description: </td>
+			<td class="ep_bLabel"> {{vm.invitation.description}} </td>
+			</tr>
+			<tr>
+			<td class="ep_pLabel">Invitation date: </td>
+			<td class="ep_bLabel"> {{vm.readableDate(vm.invitation.dateSent)}} </td>
+			</tr>
+		</table>
+
+    <md-dialog-actions layout="row">
+      	<md-button style="float:left" class="md-flat md-primary" ng-click="vm.accept()"> ok </md-button>
+    </md-dialog-actions>
+    </md-dialog-content>
+</md-dialog>
+

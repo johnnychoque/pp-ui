@@ -1,0 +1,28 @@
+<md-dialog aria-label="Experiment Info" layout-padding>
+    <md-dialog-content style="height: 40vh; width: 30vw;">
+        <h3>Experiment Info</h3>
+		<table>
+			<tr>
+			<td class="ep_pLabel">Experiment Name: </td>
+			<td class="ep_bLabel"> {{vm.experiment.experimentName}} </td>
+			</tr>
+			<tr>
+			<td class="ep_pLabel">Experiment Description: </td>
+			<td class="ep_bLabel"> {{vm.experiment.description}} </td>
+			</tr>
+			<tr>
+			<td class="ep_pLabel">Subscribed date: </td>
+			<td class="ep_bLabel"> {{vm.readableDate(vm.experiment.subscribedDate)}} </td>
+			</tr>
+			<tr>
+			<td class="ep_pLabel">Subscribed from: </td>
+			<td class="ep_bLabel"> {{vm.experiment.subscribedFrom}} </td>
+			</tr>
+		</table>
+
+    <md-dialog-actions layout="row">
+      	<md-button style="float:left" class="md-flat md-primary" ng-click="vm.accept()"> ok </md-button>
+    </md-dialog-actions>
+    </md-dialog-content>
+</md-dialog>
+

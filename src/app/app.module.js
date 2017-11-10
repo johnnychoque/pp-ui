@@ -1,26 +1,28 @@
-//(function() {
-	'use strict';
+(function() {
+    'use strict';
 
-    angular.module('app', [
-        'ngFileUpload',
-        'ngMaterial',
-        'ui.router',
-        'restangular',
-        'angularSpinner',
-        'ngDropdowns',
-        //'oauth',
-        'leaflet-directive',
-        'app.components',
-        'angular-jwt',
-        'angularLoad',
-        'angulartics',
-        'angulartics.google.analytics',
-        'ngCookies',
-        'angular-input-stars',
-        'ngMessages',
-        'datatables',
-        'jsonFormatter',
-        'ng.jsoneditor'
-    ]);
-    
-//})();
+angular.module('app', [
+    'ngFileUpload',
+    'ngMaterial',
+    'ui.router',
+    'restangular',
+    'angularSpinner',
+    'ngDropdowns',
+    'angular-jwt',
+    'app.components',
+    'angularLoad',
+    'angulartics',
+    'angulartics.google.analytics',
+    'ngCookies',
+    'angular-input-stars',
+    'ngMessages',
+    'datatables',
+    'ngTagsInput',
+    'multipleSelect',
+    'ngPopup',
+    'ngLetterAvatar',
+    'ui.bootstrap',
+    'JSONedit',
+    'ui.bootstrap'
+]);
+})();

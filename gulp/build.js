@@ -43,7 +43,7 @@ module.exports = function(options) {
             .pipe($.rev())
             .pipe(jsFilter)
             .pipe($.ngAnnotate())
-            .pipe($.uglify({ preserveComments: $.uglifySaveLicense })).on('error', options.errorHandler('Uglify'))
+            //.pipe($.uglify({ preserveComments: $.uglifySaveLicense })).on('error', options.errorHandler('Uglify'))
             .pipe(jsFilter.restore())
             .pipe(cssFilter)
             .pipe($.csso())
@@ -52,12 +52,7 @@ module.exports = function(options) {
             .pipe($.useref())
             .pipe($.revReplace())
             .pipe(htmlFilter)
-            .pipe($.minifyHtml({
-                empty: true,
-                spare: true,
-                quotes: true,
-                conditionals: true
-            }))
+            //.pipe($.minifyHtml({ empty: true, spare: true, quotes: true, conditionals: true }))
             .pipe(htmlFilter.restore())
             .pipe(gulp.dest(options.dist + '/'))
             .pipe($.size({ title: options.dist + '/', showFiles: true }));
@@ -85,14 +80,6 @@ module.exports = function(options) {
         $.del([options.dist + '/', options.tmp + '/'], done);
     });
 
-    gulp.task('external-assets', function() {
-        return gulp.src(['bower_components/leaflet/dist/images/**',
-                'bower_components/leaflet-draw/dist/images/**',
-                'bower_components/mapbox.js/images/**'
-            ])
-            .pipe(gulp.dest(options.dist + '/styles/images'));
-    });
-
     gulp.task('datatables-assets', function() {
         return gulp.src(['bower_components/datatables/media/images/**'])
             .pipe(gulp.dest(options.dist + '/images'));
@@ -103,5 +90,16 @@ module.exports = function(options) {
             .pipe(gulp.dest(options.dist + '/styles/img'));
     });
 
-    gulp.task('build', ['html', 'fonts', 'other', 'external-assets', 'datatables-assets', 'jsoneditor-assets']);
+    gulp.task('build', ['html', 'fonts', 'other', 'datatables-assets', 'jsoneditor-assets']);
 };
+
+
+
+
+
+
+
+
+
+
+

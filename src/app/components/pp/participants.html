@@ -1,0 +1,67 @@
+<md-progress-circular ng-show="vm.loadingChart" class="md-hue-3 chart_spinner" md-mode="indeterminate"></md-progress-circular>
+<label style="margin: auto;color: #EF4070; font-size: 200%"> Participant Portal</label>
+<br>
+<br>
+<p>This tool allows you to select the experiments in which you want to participate</p>
+
+<hr/>
+
+<div class="panel-group" id="participants">
+    <div class="panel panel-default">
+        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#participants" data-target="#pan1">
+          <h4 class="panel-title">
+          <md-icon md-svg-src="./assets/pp/experiment.svg"></md-icon>
+                <a style="margin-left:15px" href="#" class="ing">Selected Experiments</a>
+          </h4>
+        </div>
+        
+        <div id="pan1" class="panel-collapse collapse" style="height: 0px;">
+            <div class="panel-body">
+                <p>
+                This option enables you to see the list of experiments in which you have already accepted to participate.
+				<br>It shows all the experiments in which you participate, either accepting to participate when you have received an invitation or you have registered directly as a participant in a public experiment.
+                </p>
+                <md-button style="float:left; margin-right:20px" class="md-flat md-secondary" ng-click="vm.showSelectedExps()"> Go To Selected Experiments </md-button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="panel panel-default">
+        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#participants" data-target="#pan2">
+          <h4 class="panel-title">
+          <md-icon md-svg-src="./assets/pp/envelope.svg"></md-icon>
+                <a style="margin-left:15px" href="#" class="ing">Invitations received</a>
+          </h4>
+        </div>
+        
+        <div id="pan2" class="panel-collapse collapse" style="height: 0px;">
+            <div class="panel-body">
+                <p>
+                Based on your user profile information, experimenters can select you as a potential participant in their experiments and send you an invitation to join their group of participants. 
+				<br>This option enables you to view the list of invitations that have been sent to you, being able to accept or reject them.
+                </p>
+                <md-button style="float:left; margin-right:20px" class="md-flat md-secondary" ng-click="vm.showInvitations()"> Go To Invitations </md-button>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#participants" data-target="#pan3">
+          <h4 class="panel-title">
+          <md-icon md-svg-src="./assets/pp/public-exp.svg"></md-icon>
+                <a style="margin-left:15px" href="#" class="ing">Public Experiments</a>
+          </h4>
+        </div>
+        
+        <div id="pan3" class="panel-collapse collapse" style="height: 0px;">
+            <div class="panel-body">
+                <p>
+                A public experiment is one in which a user can participate without needing to receive an invitation from the experimenter. 
+				<br>This option enables you to view the list of public experiments and select which one to participate in.
+                </p>
+                <md-button style="float:left; margin-right:20px" class="md-flat md-secondary" ng-click="vm.showPublicExps()"> Go To Public Experiments </md-button>
+            </div>
+        </div>
+    </div>
+    
+</div>
